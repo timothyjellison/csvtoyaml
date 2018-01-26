@@ -1,6 +1,6 @@
 {
   "name": "csvtoyaml",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "convert csv to yaml",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,6 @@
   "dependencies": {
     "camelcase": "^4.1.0",
     "csvtojson": "^1.1.9",
-    "json2yaml": "^1.1.0",
-    "lodash": "^4.17.4"
+    "json2yaml": "^1.1.0"
   }
 }

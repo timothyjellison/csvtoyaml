@@ -1,22 +1,28 @@
+const fs = require('fs');
 const csv = require('csvtojson');
 const YAML = require('json2yaml');
-const fs = require('fs');
-const _ = require('lodash');
 const camelcase = require('camelcase');
 
 module.exports = (inputPath, outputPath) => {
   const rawData = [];
-  let output;
 
   csv()
   .fromFile(inputPath)
-  .on('json', x => {
-    rawData.push(JSON.stringify(x));
-  })
+  .on('json', x => rawData.push(x))
   .on('done', () => {
-    const data = rawData.map((datum) => JSON.stringify(_.mapKeys(JSON.parse(datum), (val, key) => camelcase(key))));
+    const data = rawData.map((datum) => {
+      const camelCasedDatum = {};
 
-    fs.writeFile(outputPath, YAML.stringify(JSON.parse(`[${data.join(',')}]`)), (err) => {
+      Object.keys(datum).forEach((key) => {
+        camelCasedDatum[camelcase(key)] = datum[key];
+      });
+
+      return JSON.stringify(camelCasedDatum);
+    });
+
+    const arrayOfAllData = JSON.parse(`[${data.join(',')}]`);
+
+    fs.writeFile(outputPath, YAML.stringify(arrayOfAllData), (err) => {
       if (err) console.error(err);
     });
   });
