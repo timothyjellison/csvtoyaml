@@ -8,7 +8,7 @@ module.exports = (inputPath, outputPath) => {
   const rawData = [];
   let output;
 
-  const x = csv()
+  csv()
   .fromFile(inputPath)
   .on('json', x => {
     rawData.push(JSON.stringify(x));
