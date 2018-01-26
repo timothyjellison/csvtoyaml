@@ -24,7 +24,7 @@ All this package does is pipe [csvtojson](https://www.npmjs.com/package/csvtojso
 ### Project Goals
 
 #### January 2018
-[x] create this repo
-[x] publish to npm
-[ ] add unit tests
-[ ] use best practices for package.json [following this article](http://cruft.io/posts/node-command-line-utilities/)
+- [x] create this repo
+- [x] publish to npm
+- [ ] add unit tests
+- [ ] use best practices for package.json [following this article](http://cruft.io/posts/node-command-line-utilities/)
