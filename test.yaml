@@ -1,0 +1,7 @@
+---
+  - 
+    alpha: "1"
+    betaColumn: "2"
+  - 
+    alpha: "dog"
+    betaColumn: "cat"

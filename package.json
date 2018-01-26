@@ -1,0 +1,21 @@
+{
+  "name": "csvtoyaml",
+  "version": "0.1.0",
+  "description": "convert csv to yaml",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "csv",
+    "yaml"
+  ],
+  "author": "Tim Ellison",
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "^4.1.0",
+    "csvtojson": "^1.1.9",
+    "json2yaml": "^1.1.0",
+    "lodash": "^4.17.4"
+  }
+}
