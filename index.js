@@ -1,29 +1,26 @@
 const fs = require('fs');
 const csv = require('csvtojson');
 const YAML = require('json2yaml');
-const camelcase = require('camelcase');
 
-module.exports = (inputPath, outputPath) => {
-  const rawData = [];
+module.exports = (src, options) => {
+  return new Promise((resolve, reject) => {
+    try {
+      if (!src || typeof src !== 'string') {
+        throw 'csvtoyaml requires a single argument: a string pointing to a csv file.';
+      }
 
-  csv()
-  .fromFile(inputPath)
-  .on('json', x => rawData.push(x))
-  .on('done', () => {
-    const data = rawData.map((datum) => {
-      const camelCasedDatum = {};
+      const csvRowsAsJson = [];
 
-      Object.keys(datum).forEach((key) => {
-        camelCasedDatum[camelcase(key)] = datum[key];
+      csv()
+      .fromFile(src)
+      .on('json', rowAsJson => csvRowsAsJson.push(rowAsJson))
+      .on('done', () => {
+        resolve(YAML.stringify(JSON.parse(`[${csvRowsAsJson.map(row => {
+          return JSON.stringify(row)
+        }).join(',')}]`)));
       });
-
-      return JSON.stringify(camelCasedDatum);
-    });
-
-    const arrayOfAllData = JSON.parse(`[${data.join(',')}]`);
-
-    fs.writeFile(outputPath, YAML.stringify(arrayOfAllData), (err) => {
-      if (err) console.error(err);
-    });
+    } catch(e) {
+      reject(e);
+    }
   });
 };

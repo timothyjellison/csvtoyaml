@@ -1,10 +1,10 @@
 {
   "name": "csvtoyaml",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "convert csv to yaml",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "mocha tests/*spec.js"
   },
   "keywords": [
     "csv",
@@ -13,8 +13,11 @@
   "author": "Tim Ellison",
   "license": "MIT",
   "dependencies": {
-    "camelcase": "^4.1.0",
     "csvtojson": "^1.1.9",
     "json2yaml": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0"
   }
 }

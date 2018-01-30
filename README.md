@@ -1,6 +1,7 @@
-# csvtoyaml v.0.1.2
+# csvtoyaml
 
-Convert csv files to yaml files.
+Convert csv files to yaml.
+Current version: 1.0.0
 
 ## Installation
 
@@ -10,10 +11,19 @@ npm install csvtoyaml --save
 
 ## Use
 
+csvtoyaml returns a Promise object, so you can do whatever you want with the yaml string in the then method. Here's an example of writing the yaml to the disk using Node's built-in file system library.
+
 ```javascript
 const csvtoyaml = require('csvtoyaml');
+const fs = require('fs');
 
-csvtoyaml('boringUgly.csv', 'excitingNew.yaml');
+csvtoyaml('./boringUgly.csv')
+.then(yaml => {
+  fs.writeFile('newExciting.yml', yaml);
+})
+.catch(e => {
+  console.error(e);
+});
 ```
 
 ## Dependencies
