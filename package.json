@@ -1,20 +1,25 @@
 {
   "name": "csvtoyaml",
-  "version": "1.0.0",
-  "description": "convert csv to yaml",
+  "version": "1.0.1",
+  "description": "Convert data from .csv files to a yaml string",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/*spec.js"
   },
   "keywords": [
     "csv",
-    "yaml"
+    "yaml",
+    "csvtoyaml"
   ],
   "author": "Tim Ellison",
   "license": "MIT",
   "dependencies": {
     "csvtojson": "^1.1.9",
     "json2yaml": "^1.1.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/timothyjellison/csvtoyaml.git"
   },
   "devDependencies": {
     "chai": "^4.1.2",
