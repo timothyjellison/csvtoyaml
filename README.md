@@ -2,6 +2,8 @@
 
 Convert csv files to yaml.
 
+[![Build Status](https://travis-ci.org/timothyjellison/csvtoyaml.svg?branch=master)](https://travis-ci.org/timothyjellison/csvtoyaml)
+
 ## Installation
 
 ```
