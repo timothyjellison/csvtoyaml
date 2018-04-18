@@ -1,6 +1,6 @@
 {
   "name": "csvtoyaml",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert data from .csv files to a yaml string",
   "main": "index.js",
   "scripts": {
