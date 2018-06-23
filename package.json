@@ -1,6 +1,6 @@
 {
   "name": "csvtoyaml",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Convert data from .csv files to a yaml string",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,11 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
     "mocha": "^5.0.0",
     "nyc": "^11.6.0"
   }
